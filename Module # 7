@@ -1,0 +1,26 @@
+S3 Example:
+
+y <- 1
+g <- function(x) {
+  y <- 2
+  UseMethod("g")
+}
+g.numeric <- function(x) y
+g(10)
+
+
+S4 Example:
+
+# Define an S4 generic
+setGeneric("myDim", function(object) standardGeneric("myDim"))
+
+# Define S4 methods
+setMethod("myDim", "matrix", function(object) dim(object))
+setMethod("myDim", "vector", function(object) length(object))
+
+# call the generic
+myDim(matrix(1:4,2))
+myDim(1:4)
+
+
+
