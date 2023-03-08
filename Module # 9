@@ -1,0 +1,14 @@
+Basic visualization:
+
+x <- Salaries$yrs.since.phd
+y <- Salaries$salary
+z  <- Salaries$rank
+plot(x, y, main = "Academic Salary by years since phd", xlab = "Years Since Phd", ylab = "Salary Growth", color = z)
+
+Ggplot2:
+
+ggplot(Salaries, aes(x = yrs.since.phd, y = salary, color = rank)) + geom_point() + labs(title = "Academic salary by years since degree")
+
+Lattice:
+
+xyplot(y ~ x, main = "Academic Salary by years since phd via lattice package", xlab = "Years Since Phd", ylab = "Salary Growth", col = z)
